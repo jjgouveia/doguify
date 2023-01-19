@@ -72,7 +72,7 @@ function App () {
           <p className='traducao'>💭</p>
         <textarea className='resultado' disabled placeholder='Nossa I.A canina vai responder aqui.'></textarea>
         <button className='copy-btn' onClick={clipboard}>
-          Copiar tradução <i className="bi bi-clipboard-check"></i>
+          Copiar tradução 📋
         </button>
       </main>
      <Footer />
