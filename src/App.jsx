@@ -11,6 +11,7 @@ function App () {
   const clipboard = () => {
     const resultText = document.querySelector('.resultado').textContent;
     navigator.clipboard.writeText(resultText);
+    alert('Texto copiado')
   }
 
   const handleEngine = ({ target }) => {

@@ -50,8 +50,13 @@ form {
 }
 
 .btn-group button, .doguify, .copy-btn {
+  transition: .3s all;
   width: 150px;
   padding: .2rem 0;
+}
+
+.btn-group button:hover {
+  border: 1px solid #e95823a0;
 }
 
 .btn-div {
@@ -70,11 +75,15 @@ form {
   margin: 0 auto;
 }
 
+.doguify:hover {
+  border: 1px solid #e95823a0;
+}
+
 
 
 
 button {
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 10px;
 }
 
@@ -130,6 +139,11 @@ form textarea[placeholder] {
 .copy-btn {
   margin-top: .5rem;
   width: 150px;
+
+}
+
+.copy-btn:hover {
+  border: 1px solid #e95823a0;
 }
 
 
