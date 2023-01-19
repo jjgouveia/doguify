@@ -1,4 +1,4 @@
-export const doguinhofy = (phrase) => {
+export const doguify = (phrase) => {
     return phrase
       .split(' ')
       .map((word) => {
@@ -22,7 +22,7 @@ export const doguinhofy = (phrase) => {
       .join('~')
   }
  
-  export const desdoguinhofy = (latido) => {
+  export const desdoguify = (latido) => {
     return latido
       .split('~')
       .map((word) => {

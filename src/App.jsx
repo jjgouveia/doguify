@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import './App.css'
-import dog from '../public/cachorro.png'
-import { desdoguinhofy, doguinhofy } from './doguify/engine';
+import { desdoguify, doguify } from './doguify/engine';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App () {
 
   const [engine, setEngine] = useState('');
 
   const clipboard = () => {
-    const resultText = document.querySelector('.resultText').textContent;
+    const resultText = document.querySelector('.resultado').textContent;
     navigator.clipboard.writeText(resultText);
   }
 
@@ -22,18 +23,12 @@ function App () {
   }
 
   const createResult = (engine) => {
-    const resultText = document.querySelector('.resultText');
-
-    if (resultText) {
-      resultText.remove()
-    }
-
-
-
     const resultado = document.querySelector(".resultado");
-    const textContainer = document.createElement('textarea');
-    textContainer.className = "resultText";
-    resultado.appendChild(textContainer).innerHTML = engine;
+
+    if (resultado) {
+      resultado.innerHTML = '';
+    }
+    resultado.innerHTML = engine
   }
 
 
@@ -41,7 +36,7 @@ function App () {
     e.preventDefault();
 
     const text = document.querySelector('textarea').value;
-    const target = engine === 'doguificar' ? doguinhofy(text) : desdoguinhofy(text);
+    const target = engine === 'doguificar' ? doguify(text) : desdoguify(text);
     createResult(target)
   }
 
@@ -49,14 +44,7 @@ function App () {
     <div className="App">
     
       <main className='container'>
-      <header>
-        <div className='header-container'>
-          <div className='header-wrapper'>
-        <h1>Doguify</h1>
-        <img src={ dog } alt="" />
-        </div>
-        </div>
-      </header>
+        <Header />
         <form action="texto" onSubmit={(e) => handlerOption(e)}>
           <label htmlFor="texto"></label>
           <p className='description'>
@@ -80,21 +68,15 @@ function App () {
             </button>
           </div>
         </form>
-        <div className='resultado'>
-          <h3 className='traducao'>
-            Tradução:
-          </h3>
-
-        </div>
+          <label htmlFor="resultado"></label>
+          <p className='traducao'>💭</p>
+        <textarea className='resultado' disabled placeholder='Nossa I.A canina vai responder aqui.'></textarea>
         <button className='copy-btn' onClick={clipboard}>
-          Copiar tradução <i class="bi bi-clipboard-check"></i>
+          Copiar tradução <i className="bi bi-clipboard-check"></i>
         </button>
       </main>
-      <footer>
-        Jr Gouveia - 2023 
-      </footer>
+     <Footer />
     </div>
-
   )
 }
 

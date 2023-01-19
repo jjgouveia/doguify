@@ -12,72 +12,35 @@
 
 body {
   background-color: #f3c672;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 
-
-.header-container {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: .5rem 4rem;
-  width: 80%;
-}
-
-.header-wrapper {
-  display: flex;
-  width: 160px;
-}
-
-header {
-  margin: 0 auto;
-}
-
-header img {
-  width: 48px;
-}
-
-
-
-header h1 {
-  display: flex;
-  align-items: center;
-  width: auto;
-  margin: 0 auto;
-  justify-content: center;
-  font-family: 'Indie Flower', cursive;
-}
 
 .description {
   border: 1px solid #e9582350;
   border-radius: 10px;
-  font-family: 'Source Sans Pro', sans-serif;
   margin-bottom: .5rem;
   text-align: center;
 }
 
 .container {
-  padding: 1rem;
+  padding: .5rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
   transition: .3s ease; 
 }
-
-
-
 
 
 form {
   height: 50vh;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1em;
 }
 
 .btn-group {
@@ -86,15 +49,20 @@ form {
   padding-bottom: .5rem;
 }
 
-.btn-group button, .doguify {
+.btn-group button, .doguify, .copy-btn {
   width: 150px;
   padding: .2rem 0;
 }
 
 .btn-div {
-  padding-top: .5rem;
   display: flex;
   flex-direction: column;
+  border: 1px solid #e9582350;
+  padding: .5rem .2rem;
+  margin: .5rem 0;
+  border-radius: 5px;
+
+
   
 }
 
@@ -102,21 +70,25 @@ form {
   margin: 0 auto;
 }
 
-.btn-group:focus {
-  border: 1px solid #e95823
-}
 
 
 
 button {
   border: none;
+  border-radius: 10px;
+}
+
+textarea {
+  font-family: 'Comic Neue', cursive;
+  padding: .3rem;
+  text-align: justify;
 
 }
 
 form textarea {
   border: 1px solid #e9582350;
   border-radius: 5px;
-  height: 75%;
+  height: 60%;
 }
 
 form textarea[placeholder] {
@@ -129,32 +101,31 @@ form textarea[placeholder] {
 }
 
 .method {
-  padding: .5rem 0;
+  padding-bottom: .5rem;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid #e9582350;
+
+
 }
 
 .traducao {
-  padding: .5rem 0;
+  padding-bottom: .5rem;
 }
 
 .resultado {
   display: flex;
   flex-direction: column;
   border: 1px solid #efefef;
-  padding: 0 1rem;
   height: 30vh;
   word-wrap: break-word;
   background-color: #ffad10;
-
-}
-
-.resultText {
-  text-align: justify;
-  word-wrap: break-word;
-  height: 75%;
   border: 1px solid #e9582350;
-  border-radius: 5px;
-  
 }
+
+.resultado:disabled {
+  color:black;
+}
+
 
 .copy-btn {
   margin-top: .5rem;
@@ -164,6 +135,6 @@ form textarea[placeholder] {
 
 @media (width < 496px) {
   .container {
-    width: 100%;
+    width: 95%;
   }
 }

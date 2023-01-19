@@ -1,0 +1,14 @@
+footer {
+    position: absolute;
+    bottom: auto;
+    height: 15px;
+    border-top: 1px solid #e9582350;
+    padding: .3rem 0;
+    text-align: center;
+  }
+
+  @media(width < 496px) {
+    footer {
+        font-size: 14px;
+    }
+  }
