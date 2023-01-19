@@ -4,7 +4,7 @@ export const doguinhofy = (phrase) => {
       .map((word) => {
         const wordLetters = word.split('')
         return wordLetters
-          .map((letter, _index) => {
+          .map((letter, index) => {
             const charCode = letter.charCodeAt(0);
             const binary = charCode
               .toString(2)
@@ -27,7 +27,7 @@ export const doguinhofy = (phrase) => {
       .split('~')
       .map((word) => {
         return word
-            .split('-')
+            .split('rrrrrr')
          .map((letter) => {
             const binary = letter
               .replace(/au au(, )*/g, '1')
