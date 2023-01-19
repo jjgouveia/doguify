@@ -6,20 +6,56 @@
   
 }
 
-header {
-  display: flex;
-  padding: 0 4rem;
+.App {
+  margin: 0 auto;
 }
 
-.wave1 {
-  margin-bottom: -150px;
-  min-width: 800px;
-  border: 1px solid red;
+body {
+  background-color: #f3c672;
+  font-family: 'Indie Flower', cursive;
 }
+
+
+
+.header-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 4rem;
+  width: 80%;
+}
+
+.header-wrapper {
+  display: flex;
+  width: 160px;
+}
+
+header {
+  margin: 0 auto;
+}
+
+header img {
+  width: 48px;
+}
+
+
 
 header h1 {
   display: flex;
   align-items: center;
+  width: auto;
+  margin: 0 auto;
+  justify-content: center;
+  font-family: 'Indie Flower', cursive;
+}
+
+.description {
+  border: 1px solid #e9582350;
+  border-radius: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: .5rem;
+  text-align: center;
 }
 
 .container {
@@ -28,21 +64,16 @@ header h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  transition: .3s ease; 
 }
 
 
 
-.caramelo-pic {
-  display: flex;
-  background-color: #e95823;
-  width: 55px;
-  height: 50px;
-  border-radius: 50%;
-  
-}
+
 
 form {
-  width: 70%;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -51,25 +82,58 @@ form {
 
 .btn-group {
   display: flex;
+  justify-content: space-around;
   padding-bottom: .5rem;
+}
+
+.btn-group button, .doguify {
+  width: 150px;
+  padding: .2rem 0;
+}
+
+.btn-div {
+  padding-top: .5rem;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.doguify {
+  margin: 0 auto;
 }
 
 .btn-group:focus {
   border: 1px solid #e95823
 }
 
-.btn-div {
-  padding-top: .5rem;
+
+
+button {
+  border: none;
+
 }
 
 form textarea {
-  border: 1px solid #e95823;
+  border: 1px solid #e9582350;
   border-radius: 5px;
   height: 75%;
 }
 
 form textarea[placeholder] {
   font-size: 15px;
+  background-color: #ffad10;
+  background-image: url("./assets/dog.jpg");
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+.method {
+  padding: .5rem 0;
+}
+
+.traducao {
+  padding: .5rem 0;
 }
 
 .resultado {
@@ -77,15 +141,29 @@ form textarea[placeholder] {
   flex-direction: column;
   border: 1px solid #efefef;
   padding: 0 1rem;
-  width: 80%;
   height: 30vh;
   word-wrap: break-word;
+  background-color: #ffad10;
+
 }
 
 .resultText {
   text-align: justify;
+  word-wrap: break-word;
+  height: 75%;
+  border: 1px solid #e9582350;
+  border-radius: 5px;
+  
 }
 
 .copy-btn {
-  width: 100px;
+  margin-top: .5rem;
+  width: 150px;
+}
+
+
+@media (width < 496px) {
+  .container {
+    width: 100%;
+  }
 }
