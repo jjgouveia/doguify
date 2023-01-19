@@ -1,5 +1,5 @@
 import React from 'react'
-import dog from '../../public/cachorro.png'
+import dog from '../assets/doguify.png'
 import '../styles/Header.css'
 
 
