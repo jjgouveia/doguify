@@ -7,8 +7,10 @@ import Footer from './components/Footer';
 function App () {
 
   const [engine, setEngine] = useState('');
+  const [copy, setCopy] = useState(false);
 
   const clipboard = () => {
+    setCopy(true);
     const resultText = document.querySelector('.resultado').textContent;
     navigator.clipboard.writeText(resultText);
   }
@@ -34,6 +36,8 @@ function App () {
 
   const handlerOption = (e) => {
     e.preventDefault();
+
+    setCopy(false);
 
     const text = document.querySelector('textarea').value;
     const target = engine === 'doguificar' ? doguify(text) : desdoguify(text);
@@ -72,7 +76,7 @@ function App () {
           <p className='traducao'>💭</p>
         <textarea className='resultado' disabled placeholder='Nossa I.A canina vai responder aqui.'></textarea>
         <button className='copy-btn' onClick={clipboard}>
-          Copiar tradução 📋
+          { !copy ? 'Copiar tradução 📋' : 'Copiado ✔️' }
         </button>
       </main>
      <Footer />
