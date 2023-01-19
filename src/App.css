@@ -1,25 +1,38 @@
-#root {
+* {
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   
 }
 
-.App {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  border: 1px solid black;
-  margin: 0 auto;
+header {
+  display: flex;
+  padding: 0 4rem;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
 }
 
 .container {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+}
+
+
+
+.caramelo-pic {
+  display: flex;
+  background-color: #e95823;
+  width: 55px;
+  height: 50px;
+  border-radius: 50%;
+  
 }
 
 form {
@@ -28,6 +41,10 @@ form {
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
+}
+
+.btn-div {
+  padding-top: .5rem;
 }
 
 form textarea {
@@ -43,8 +60,10 @@ form textarea[placeholder] {
 .resultado {
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
+  border: 1px solid #efefef;
+  padding: 0 1rem;
   width: 80%;
+  height: 30vh;
   word-wrap: break-word;
 }
 

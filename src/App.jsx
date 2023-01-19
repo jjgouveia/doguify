@@ -23,12 +23,13 @@ function App () {
     <div className="App">
       <header>
         <h1>Doguify</h1>
+          <div className='caramelo-pic'></div>
       </header>
       <main className='container'>
         <form action="texto">
           <label htmlFor="texto"></label>
           <textarea name="texto" placeholder='Digite um texto'></textarea>
-          <div>
+          <div className='btn-div'>
             <button type="button" onClick={action}>
               <span>
                 Doguify!
