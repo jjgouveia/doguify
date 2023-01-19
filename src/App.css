@@ -85,3 +85,7 @@ form textarea[placeholder] {
 .resultText {
   text-align: justify;
 }
+
+.copy-btn {
+  width: 100px;
+}

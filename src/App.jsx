@@ -6,6 +6,10 @@ function App () {
 
   const [engine, setEngine] = useState ('');
 
+  const clipboard = () => {
+    const resultText = document.querySelector('.resultText').textContent;
+    navigator.clipboard.writeText(resultText);
+  }
 
   const handleEngine = ({ target }) => {
     const method = document.querySelector(".method")
@@ -14,12 +18,13 @@ function App () {
   }
 
   const createResult = (engine) => {
-
     const resultText = document.querySelector('.resultText');
 
     if (resultText) {
       resultText.remove()
     }
+
+    
 
     const resultado = document.querySelector(".resultado");
     const textContainer = document.createElement('p');
@@ -29,14 +34,10 @@ function App () {
 
 
   const handlerOption = (e) => {
-
     e.preventDefault();
 
-
     const text = document.querySelector('textarea').value;
-
     const target = engine === 'doguificar' ? doguinhofy(text) : desdoguinhofy(text);
-
     createResult(target)
   }
 
@@ -71,7 +72,11 @@ function App () {
           <h3>
             O resultado será exibido aqui:
           </h3>
+     
         </div>
+        <button className='copy-btn' onClick={clipboard}>
+          Copiar tradução
+        </button>
       </main>
     </div>
 
@@ -79,3 +84,5 @@ function App () {
 }
 
 export default App
+
+
