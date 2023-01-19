@@ -9,9 +9,9 @@ function App () {
   const [engine, setEngine] = useState('');
 
   const clipboard = () => {
+    alert('Texto copiado')
     const resultText = document.querySelector('.resultado').textContent;
     navigator.clipboard.writeText(resultText);
-    alert('Texto copiado')
   }
 
   const handleEngine = ({ target }) => {
