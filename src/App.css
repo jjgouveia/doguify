@@ -23,6 +23,7 @@ body {
   border-radius: 10px;
   margin-bottom: .5rem;
   text-align: center;
+  padding: .1rem;
 }
 
 .container {
@@ -150,5 +151,10 @@ form textarea[placeholder] {
 @media (width < 496px) {
   .container {
     width: 95%;
+  }
+
+  .btn-group button, .doguify, .copy-btn {
+    height: 38px;
+    font-size: .9rem;
   }
 }

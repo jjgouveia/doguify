@@ -8,6 +8,12 @@ function App () {
 
   const [engine, setEngine] = useState('');
   const [copy, setCopy] = useState(false);
+  const [text, setText] = useState('');
+  const [method, setMethod] = useState(false);
+
+  const onChangeTextArea = ({ target }) => {
+    setText(target.value);
+  }
 
   const clipboard = () => {
     setCopy(true);
@@ -16,6 +22,9 @@ function App () {
   }
 
   const handleEngine = ({ target }) => {
+
+    setMethod(true);
+
     const method = document.querySelector(".method")
     const trad = document.querySelector(".traducao");
     method.innerHTML = `Traduzindo do ${target.textContent}`;
@@ -54,9 +63,14 @@ function App () {
           <p className='description'>
             Traduza do humanês 👩🏾‍🦱para o cachorrês 🐶 e vice-versa e converse com o seu doguinho.
           </p>
-          <textarea name="texto" placeholder='Digite alguma coisa para que a nossa equipe canina possa verificar' required></textarea>
+          <textarea
+          name="texto"
+          placeholder='Digite alguma coisa para que a nossa equipe canina possa verificar'
+          required
+          onChange={ onChangeTextArea }>
+          </textarea>
           <div className='btn-div'>
-            <p className='method'>Selecione um método de tradução</p>
+            <p className='method'>Selecione um método de tradução 📍</p>
             <div className='btn-group'>
               <button name='doguificar' type='button' onClick={handleEngine}>
                 Humanês ➡️ Doguês
@@ -65,7 +79,7 @@ function App () {
                 Doguês ➡️ Humanês
               </button>
             </div>
-            <button type="submit" className='doguify'>
+            <button type="submit" className='doguify' disabled={!method || !text.length}>
               <span>
                 Doguify! 🐕
               </span>
@@ -74,8 +88,8 @@ function App () {
         </form>
           <label htmlFor="resultado"></label>
           <p className='traducao'>💭</p>
-        <textarea className='resultado' disabled placeholder='Nossa I.A canina vai responder aqui.'></textarea>
-        <button className='copy-btn' onClick={clipboard}>
+        <textarea className='resultado' name="resultado" disabled placeholder='Nossa I.A canina vai responder aqui.' onChange={ onChangeTextArea }></textarea>
+        <button className='copy-btn' onClick={clipboard} disabled={ !text.length }>
           { !copy ? 'Copiar tradução 📋' : 'Copiado ✔️' }
         </button>
       </main>
