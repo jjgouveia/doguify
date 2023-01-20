@@ -8,8 +8,16 @@ function App () {
 
   const [engine, setEngine] = useState('');
   const [copy, setCopy] = useState(false);
+  const [handleCopy, setHandleCopy] = useState(false);
   const [text, setText] = useState('');
   const [method, setMethod] = useState(false);
+
+  function verifyResultArea() {
+    const resultText = document.querySelector('.resultado').textContent;
+    if(resultText.length) {
+      setHandleCopy(true)
+    }
+  }
 
   const onChangeTextArea = ({ target }) => {
     setText(target.value);
@@ -24,11 +32,11 @@ function App () {
   const handleEngine = ({ target }) => {
 
     setMethod(true);
-
+    
     const method = document.querySelector(".method")
     const trad = document.querySelector(".traducao");
     method.innerHTML = `Traduzindo do ${target.textContent}`;
-
+    
     target.name === 'doguificar' ? trad.innerHTML = 'Como o doguinho diria:' : trad.innerHTML = 'O que o doguinho quis dizer:';
     setEngine(target.name);
   }
@@ -40,6 +48,9 @@ function App () {
       resultado.innerHTML = '';
     }
     resultado.innerHTML = engine
+
+    verifyResultArea()
+
   }
 
 
@@ -89,7 +100,7 @@ function App () {
           <label htmlFor="resultado"></label>
           <p className='traducao'>💭</p>
         <textarea className='resultado' name="resultado" disabled placeholder='Nossa I.A canina vai responder aqui.' onChange={ onChangeTextArea }></textarea>
-        <button className='copy-btn' onClick={clipboard} disabled={ !text.length }>
+        <button className='copy-btn' onClick={clipboard} disabled={ !handleCopy }>
           { !copy ? 'Copiar tradução 📋' : 'Copiado ✔️' }
         </button>
       </main>
